@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { MediaObserverFake, commonTestingModules, commonTestingProviders } from './common/common.testing';
+
 import { AppComponent } from './app.component';
+import { MediaObserver } from '@angular/flex-layout';
+import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      imports: [ commonTestingModules ],
+      providers: commonTestingProviders.concat([
+        {provide: MediaObserver, useClass: MediaObserverFake}
+      ]),
+      declarations: [AppComponent],
     }).compileComponents();
   });
 

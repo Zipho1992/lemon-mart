@@ -2,9 +2,21 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { AuthMode } from '../app/auth/auth.enum'
+
 export const environment = {
-  production: false
-};
+  production: false,
+  authMode: AuthMode.InMemory,
+  firebase: {
+    apiKey: 'AIzaSyA_39OnkusNS7WeMqTuhRosonMV20WntcA',
+    authDomain: 'lemon-mart-007.firebaseapp.com',
+    databaseURL: 'https://lemon-mart-007.firebaseio.com',
+    projectId: 'lemon-mart-007',
+    storageBucket: '',
+    messagingSenderId: '416892066612',
+    appId: '1:416892066612:web:ec2f404c18fd4bd8',
+  },
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
